@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import ClinicId from './ClinicId'
 import Ethnicity from './Ethnicity'
+import STIServices from './STIServices'
 
 export class Userform extends Component {
     state = {
         step: 1,
         clinicId: '',
-        ethnicity: ''
+        ethnicity: '',
+        stiServices: {
+            harmReduction: false,
+            condomDistribution: false,
+            partnerNotification: false
+        }
     }
 
     nextStep = () => this.setState((prevState) => ({ step: prevState.step + 1}))
@@ -22,23 +28,23 @@ export class Userform extends Component {
         this.setState({[input]: e.target.value});
     }
 
-//     // Handle checkbox change?
-//     checkChange = (type, checked) => {
-//       this.setState({
-//         ...this.state,
-//         intercourseTypes: {
-//           ...this.state.intercourseTypes, 
-//           [type]: checked
-//         }
-//       });
-//       // console.log('>>>', this.state)
-//     }
+    // Handle checkbox change?
+    checkChange = (type, checked) => {
+      this.setState({
+        ...this.state,
+        stiServices: {
+          ...this.state.stiServices, 
+          [type]: checked
+        }
+      });
+      // console.log('>>>', this.state)
+    }
 
 
     render() {
         const { step } = this.state;
-        const { clinicId, ethnicity } = this.state;
-        const values = { clinicId, ethnicity }
+        const { clinicId, ethnicity, stiServices } = this.state;
+        const values = { clinicId, ethnicity, stiServices }
         let appPage;
         switch(step) {
             case 1:
@@ -57,6 +63,16 @@ export class Userform extends Component {
                        prevStep={this.prevStep}
                        handleChange={this.handleChange}
                        values={values}
+                    />
+                )
+                break;
+            case 3:
+                appPage = (
+                    <STIServices
+                      nextStep={this.nextStep}
+                      prevStep={this.prevStep}
+                      setCheckbox={this.checkChange}
+                      values={values}
                     />
                 )
                 break;

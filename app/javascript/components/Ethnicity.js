@@ -11,15 +11,7 @@ export const Ethnicity = (props) => {
     props.prevStep();
   }
 
-  const handleOptionChange = changeEvent => {
-    props.setState({
-      selectedOption: changeEvent.target.value
-    });
-  };
-
   const { values, handleChange } = props;
-
-  
 
   return (
     <form>
@@ -60,39 +52,3 @@ export const Ethnicity = (props) => {
 }
 
 export default Ethnicity
-
-
-
-
-
-
-
-
-
-
-// export const ClinicId = (props) => {
-//     const onContinue = e => {
-//         e.preventDefault();
-//         props.nextStep();
-//     }
-
-//     const { values, handleChange } = props;
-
-//     return (
-//         <form>
-//           <h1>1. What is your Clinic ID Number?</h1>
-//           <input
-//             onChange={handleChange("clinicId")}
-//             defaultValue={values.clinicId}
-//           />
-//           <br/>
-//           <input 
-//              type="submit" 
-//              value="Submit" 
-//              onClick={onContinue} />
-//         </form>
-
-//     );
-// }
-
-// export default ClinicId
