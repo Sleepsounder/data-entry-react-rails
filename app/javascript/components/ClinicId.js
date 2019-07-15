@@ -1,18 +1,24 @@
 import React from 'react'
 
 export const ClinicId = (props) => {
-    // const onContinue = e => {
-    //     e.preventDefault();
-    //     props.nextStep();
-    // }
+    const onContinue = e => {
+        e.preventDefault();
+        props.nextStep();
+    }
 
-    // const { values, handleChange } = props;
+    const { values, handleChange } = props;
 
     return (
         <form>
           <h1>1. What is your Clinic ID Number?</h1>
-          <input/>
+          <input
+            onChange={handleChange("clinicId")}
+            defaultValue={values.clinicId}
+          />
+          <br/>
+          <input type="submit" value="Submit" />
         </form>
+
     )
 
 
