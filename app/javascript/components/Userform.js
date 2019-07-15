@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import ClinicId from './ClinicId'
+import Ethnicity from './Ethnicity'
 
 export class Userform extends Component {
     state = {
         step: 1,
-        clinicId: ''
+        clinicId: '',
+        ethnicity: ''
     }
 
     nextStep = () => this.setState((prevState) => ({ step: prevState.step + 1}))
@@ -35,14 +37,24 @@ export class Userform extends Component {
 
     render() {
         const { step } = this.state;
-        const { clinicId } = this.state;
-        const values = { clinicId }
+        const { clinicId, ethnicity } = this.state;
+        const values = { clinicId, ethnicity }
         let appPage;
         switch(step) {
             case 1:
                 appPage = (
                     <ClinicId
                        nextStep={this.nextStep}
+                       handleChange={this.handleChange}
+                       values={values}
+                    />
+                )
+                break;
+            case 2:
+                appPage = (
+                    <Ethnicity
+                       nextStep={this.nextStep}
+                       prevStep={this.prevStep}
                        handleChange={this.handleChange}
                        values={values}
                     />
