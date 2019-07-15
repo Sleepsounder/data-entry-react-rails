@@ -4,7 +4,7 @@ import { Userform } from './Userform'
 function App() {
     return (
         <div>
-            Boone's Farm!
+            <Userform/>
         </div>
     )
 }
