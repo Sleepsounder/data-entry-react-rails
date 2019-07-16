@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import ClinicId from './ClinicId'
-import Ethnicity from './Ethnicity'
-import STIServices from './STIServices'
+import ClinicId from './ClinicId';
+import Ethnicity from './Ethnicity';
+import STIServices from './STIServices';
+import Confirm from './Confirm'
 
 export class Userform extends Component {
     state = {
@@ -72,6 +73,15 @@ export class Userform extends Component {
                       nextStep={this.nextStep}
                       prevStep={this.prevStep}
                       setCheckbox={this.checkChange}
+                      values={values}
+                    />
+                )
+                break;
+                case 4:
+                appPage = (
+                    <Confirm
+                      nextStep={this.nextStep}
+                      prevStep={this.prevStep}
                       values={values}
                     />
                 )
