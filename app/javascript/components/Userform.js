@@ -49,26 +49,26 @@ export class Userform extends Component {
         const values = { clinicId, ethnicity, stiServices }
         let appPage;
         switch(step) {
-            // case 1:
-            //     appPage = (
-            //         <ClinicId
-            //            nextStep={this.nextStep}
-            //            handleChange={this.handleChange}
-            //            values={values}
-            //         />
-            //     )
-            //     break;
-            // case 2:
-            //     appPage = (
-            //         <Ethnicity
-            //            nextStep={this.nextStep}
-            //            prevStep={this.prevStep}
-            //            handleChange={this.handleChange}
-            //            values={values}
-            //         />
-            //     )
-            //     break;
             case 1:
+                appPage = (
+                    <ClinicId
+                       nextStep={this.nextStep}
+                       handleChange={this.handleChange}
+                       values={values}
+                    />
+                )
+                break;
+            case 2:
+                appPage = (
+                    <Ethnicity
+                       nextStep={this.nextStep}
+                       prevStep={this.prevStep}
+                       handleChange={this.handleChange}
+                       values={values}
+                    />
+                )
+                break;
+            case 3:
                 appPage = (
                     <STIServices
                       nextStep={this.nextStep}
@@ -78,7 +78,7 @@ export class Userform extends Component {
                     />
                 )
                 break;
-                case 2:
+            case 4:
                 appPage = (
                     <Confirm
                       nextStep={this.nextStep}
@@ -87,7 +87,7 @@ export class Userform extends Component {
                     />
                 )
                 break;
-                case 3:
+            case 5:
                     appPage = (
                         <Success
                           nextStep={this.nextStep}

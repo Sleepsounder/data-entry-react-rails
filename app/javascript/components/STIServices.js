@@ -23,32 +23,36 @@ export const STIServices = (props) => {
       </div>
       <form className='answer'>
           <h2 className='question'>3. For each patient with a positive STI result, which of the following services were provided in clinic:</h2>
-          <label className='radios'>
-              <input 
-                      type="checkbox"
-                      value="harmReduction"
-                      checked={ props.values.stiServices.harmReduction }
-                      onChange={checkChange("harmReduction")}
-                      className='radio'
-                  />Harm reduction, safer sex counseling
-              <br/>
-              <input 
-                      type="checkbox"
-                      value="condomDistribution"
-                      checked={ props.values.stiServices.condomDistribution }
-                      onChange={checkChange("condomDistribution")}
-                      className='radio'
-                  />Condom distribution
-              <br/>
-              <input 
-                      type="checkbox"
-                      value="partnerNotification"
-                      checked={ props.values.stiServices.partnerNotification }
-                      onChange={checkChange("partnerNotification")}
-                      className='radio'
-                  />Partner(s) notification and treatment in clinic
-              <br/>
+          <label className='container'>Harm reduction, safer sex counceling
+            <input 
+              type="checkbox"
+              value="harmReduction"
+              checked={ props.values.stiServices.harmReduction }
+              onChange={checkChange("harmReduction")}
+            />
+            <span class='checkmark'></span>
           </label>
+          <br/>
+          <label className='container'>Condom distribution
+            <input 
+              type="checkbox"
+              value="condomDistribution"
+              checked={ props.values.stiServices.condomDistribution }
+              onChange={checkChange("condomDistribution")}
+            />
+            <span class='checkmark'></span>
+          </label>
+          <br/>
+          <label className='container'>Notification and treatment in clinic
+            <input 
+              type="checkbox"
+              value="partnerNotification"
+              checked={ props.values.stiServices.partnerNotification }
+              onChange={checkChange("partnerNotification")}
+            />
+            <span class='checkmark'></span>
+          </label>
+          <br/>
           <input 
               type="submit" 
               value="Submit" 
