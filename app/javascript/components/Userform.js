@@ -3,6 +3,7 @@ import ClinicId from './ClinicId';
 import Ethnicity from './Ethnicity';
 import STIServices from './STIServices';
 import Confirm from './Confirm'
+import Success from './Success'
 
 export class Userform extends Component {
     state = {
@@ -86,6 +87,15 @@ export class Userform extends Component {
                     />
                 )
                 break;
+                case 5:
+                    appPage = (
+                        <Success
+                          nextStep={this.nextStep}
+                          prevStep={this.prevStep}
+                          values={values}
+                        />
+                    )
+                    break;
         }
         return appPage;
     }
